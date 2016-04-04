@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
     devtool: debug ? 'source-map' : null,
-    entry: './js/main.js',
+    entry: './js/mydux.js',
     module: {
         loaders: [
             { test: /\.js$/,   loader: 'babel?stage=0', exclude: /node_modules/ }
@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         path: './js/',
-        filename: 'main.min.js'
+        filename: 'main.js'
     },
     plugins: debug ? [] : [
         new webpack.optimize.DedupePlugin(),

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Learn how to use redux step by step",
   "scripts": {
-    "webpack": "webpack"
+    "build": "webpack --progress --colors --watch"
   },
   "author": "Kirill Shmakov",
   "license": "BSD-2-Clause",

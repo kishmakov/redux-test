@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/menato/Home/mydux",
+			"folder_exclude_patterns":
+			[
+				"node_modules",
+				".git",
+				".idea"
+			]
+		}
+	]
+}
