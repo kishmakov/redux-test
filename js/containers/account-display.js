@@ -5,7 +5,7 @@ const mapStateToProps = (state) => {
   return {
     account: state.account
   }
-}
+};
 
 const AccountDisplay = connect(mapStateToProps)(Display)
 
