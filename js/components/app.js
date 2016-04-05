@@ -1,13 +1,15 @@
 import React from 'react';
 
-import AccountDisplay from '../containers/account-display'
-import AccountContributor from '../containers/account-contributor'
+import PushableButton from '../containers/pusshable-button'
+import UpdatableDisplay from '../containers/updatable-display'
 
 const App = () => (
     <div id="application">
-        <h1>My Dux</h1>
-        <AccountDisplay />
-        <AccountContributor />
+        <div id="header">
+            <PushableButton buttonId={0} />
+            <PushableButton buttonId={1} />
+        </div>
+        <UpdatableDisplay />
     </div>
 );
 

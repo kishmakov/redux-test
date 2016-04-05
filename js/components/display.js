@@ -1,11 +1,13 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
-const Display = ({account}) => (
-    <p>I have #{account} apples!</p>
-)
+const Display = ({selectedButtonId}) => (
+    <div id="display">
+        Selected button: #{selectedButtonId}.
+    </div>
+);
 
 Display.propTypes = {
-  account: React.PropTypes.number.isRequired
-}
+    selectedButtonId: React.PropTypes.number.isRequired
+};
 
 export default Display
