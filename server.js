@@ -1,19 +1,21 @@
-var webSocketServer = require('ws').Server;
+var ws = require('ws');
 var connect = require('connect');
+var http = require('http');
 var serveStatic = require('serve-static');
 
+var app = connect();
 
-connect().use(serveStatic(__dirname)).listen(5000, function () {
-    console.log('Server running on 5000...');
-});
+app.use("/", serveStatic(__dirname + "/public"));
 
-var wss = new webSocketServer({ port: 5001 });
+var wss = new ws.Server({ port: 5001 });
 
 wss.on('connection', function connection(ws) {
     ws.on('message', function incoming(message) {
         console.log('received: %s', message);
         setTimeout(function () {
-            ws.send(JSON.stringify("Tack"));
+            ws.send("Tack");
         }, 1000);
     });
 });
+
+http.createServer(app).listen(5000);

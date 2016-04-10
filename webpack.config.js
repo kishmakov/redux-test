@@ -3,14 +3,14 @@ var webpack = require('webpack');
 
 module.exports = {
     devtool: debug ? 'source-map' : null,
-    entry: './js/mydux.js',
+    entry: './public/js/mydux.js',
     module: {
         loaders: [
             { test: /\.js$/,   loader: 'babel?stage=0', exclude: /node_modules/ }
         ]
     },
     output: {
-        path: './js/',
+        path: './public/js/',
         filename: 'main.js'
     },
     plugins: debug ? [] : [
