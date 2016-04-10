@@ -1,6 +1,7 @@
 .idea/modules.xml
+.idea/misc.xml
 .idea/mydux.iml
 .idea/workspace.xml
 mydux.sublime-workspace
 node_modules
-js/main.js*
+public/js/main.js*

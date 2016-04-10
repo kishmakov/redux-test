@@ -3,6 +3,7 @@ import {render} from 'react-dom'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import chooseButton from './reducers/choose-button'
+import { choose } from './actions'
 import App from './components/app'
 
 let store = createStore(chooseButton);
@@ -17,11 +18,11 @@ socket.onopen = function () {
 };
 
 socket.onmessage = function (message) {
-    console.log('Received: ' + JSON.stringify(message.data))
+    var data = JSON.parse(message.data);
+    if (data.id === 0 || data.id === 1)
+        store.dispatch(choose(data.id));
 
-    setTimeout(function () {
-        socket.send(JSON.stringify("Tick"));
-    }, 1000);
+    console.log('Received: ' + message.data);
 };
 
 socket.onerror = function (error) {
